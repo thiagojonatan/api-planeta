@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://xmlns.jcp.org/xml/ns/persistence
+        http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="ogmjpaPU" transaction-type="JTA">
+		<provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
+		
+		<class>br.com.b2w.starwars.modelo.Planeta</class>
+		
+		<properties>
+			<!-- <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossStandAloneJtaPlatform"/> -->
+			<property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform"/>
+			
+			<!-- <property name="hibernate.transaction.jta.platform" value="JBossAS"/> -->
+			<!-- Properties for Hibernate -->
+			
+			<!-- <property name="hibernate.ogm.datastore.provider" value="org.hibernate.ogm.datastore.mongodb.impl.MongoDBDatastoreProvider" /> -->
+			<!-- <property name="hibernate.ogm.datastore.provider" value="infinispan_embedded" /> -->
+			<!-- <property name="jboss.as.jpa.providerModule" value="org.hibernate:ogm"/> -->
+	        
+	        <property name="hibernate.ogm.datastore.provider" value="mongodb"/>
+			<!-- <property name="hibernate.ogm.datastore.grid_dialect" value="infinispan_embedded" /> -->
+			<property name="hibernate.ogm.datastore.database" value="starwars" />
+			<property name="hibernate.ogm.mongodb.host" value="127.0.0.1" />
+			<property name="hibernate.ogm.datastore.create_database" value="true" /> 
+			<property name="hibernate.show_sql" value="false" />
+		</properties>
+	</persistence-unit>
+</persistence>
