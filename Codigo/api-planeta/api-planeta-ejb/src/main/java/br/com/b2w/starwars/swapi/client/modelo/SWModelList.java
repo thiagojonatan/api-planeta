@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlSeeAlso;
 
 import br.com.b2w.starwars.modelo.Planeta;
 
-@XmlRootElement
+@XmlRootElement(name = "list")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlSeeAlso(Planeta.class)
 public class SWModelList<T> implements Serializable {
